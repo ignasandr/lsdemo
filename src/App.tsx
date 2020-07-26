@@ -8,6 +8,9 @@ import { Button } from './components/Button';
 import { Synth } from './components/Synth';
 import { Article } from './components/Article';
 import { Counter } from './components/Counter';
+import Tick from './step/Tick';
+import Lasers from './step/Lasers';
+import Toggle from './step/Toggle';
 
 function App() {
 return (
@@ -25,6 +28,11 @@ return (
         <Counter />
       </Wrapper>
       <Synth />
+      <Tick />
+      <Wrapper>
+        <Lasers />
+        <Toggle /> 
+      </Wrapper>
     </div>
   );
 }
