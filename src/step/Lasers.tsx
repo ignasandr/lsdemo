@@ -1,9 +1,15 @@
 import React, { MouseEvent } from 'react';
 
-function Lasers() {
+type toggleProps = {
+    isToggleOn: boolean;
+}
+
+function Lasers(props: toggleProps) {
     function handleClick(event: MouseEvent) {
         event.preventDefault();
-        alert('The button was clicked. ' + event.currentTarget.textContent);
+        if (props.isToggleOn === true) {
+            alert('The button was clicked. ' + event.currentTarget.textContent);
+        }
     }
     return (
         <button onClick={handleClick}>

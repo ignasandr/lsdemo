@@ -9,12 +9,14 @@ import { Synth } from './components/Synth';
 import { Article } from './components/Article';
 import { Counter } from './components/Counter';
 import Tick from './step/Tick';
-import Lasers from './step/Lasers';
-import Toggle from './step/Toggle';
+import Calculator from './step/Calculator';
+import Bcentral from './step/Bcentral';
+import Login from './step/Login';
 
 function App() {
 return (
     <div className="App">
+      <Login />
       <Wrapper>
         <Card title="OK" paragraph="Whatever, dude" />
         <Card title="L8r">
@@ -29,9 +31,9 @@ return (
       </Wrapper>
       <Synth />
       <Tick />
+      <Bcentral />
       <Wrapper>
-        <Lasers />
-        <Toggle /> 
+        <Calculator />
       </Wrapper>
     </div>
   );

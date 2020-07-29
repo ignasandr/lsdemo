@@ -1,26 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component, MouseEvent } from 'react';
 
-type MyState = { isToggleOn: boolean };
+type ToggleProps = { 
+    isToggleOn: boolean,
+    toggleUpdate: Function
+};
 
-class Toggle extends Component<{}, MyState> {
+class Toggle extends Component<ToggleProps> {
     
-    constructor(props: {}) {
+    constructor(props: ToggleProps) {
         super(props);
-        this.state = {isToggleOn: true};
 
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick() {
-        this.setState(state => ({
-            isToggleOn: !state.isToggleOn
-        }));
+    handleClick(event: MouseEvent) {
+        event.preventDefault();
+        this.props.toggleUpdate();
     }
 
     render() {
         return(
             <button onClick={this.handleClick}>
-                {this.state.isToggleOn ? 'ON' : 'OFF'}
+                {this.props.isToggleOn ? 'ON' : 'OFF'}
             </button>
         )
     }
