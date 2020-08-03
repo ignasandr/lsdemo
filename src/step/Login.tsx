@@ -1,10 +1,6 @@
-import React, { Component, MouseEvent } from "react";
+import React, { Component } from "react";
 import Greeting from "./Greeting";
 import { LoginButton, LogoutButton } from "./LogButtons";
-
-type LoginProps = {
-    onClick: Function;
-}
 
 type LoginState = {
     isLoggedIn: boolean;
@@ -19,7 +15,7 @@ class Login extends Component<{}, LoginState> {
 
     }
 
-    handleLoginClick(event: MouseEvent) {
+    handleLoginClick() {
         this.setState({isLoggedIn: true});
     }
 
@@ -29,16 +25,21 @@ class Login extends Component<{}, LoginState> {
 
     render() {
         const isLoggedIn = this.state.isLoggedIn;
-        let button;
-        if (isLoggedIn) {
-            button = <LogoutButton />;
-        } else {
-            button = <LoginButton />;
-        }
+        // let button;
+        // if (isLoggedIn) {
+        //     button = <LogoutButton onClick={this.handleLogoutClick}/>;
+        // } else {
+        //     button = <LoginButton onClick={this.handleLoginClick}/>;
+        // }
         return (
             <div>
                 <Greeting isLoggedIn={isLoggedIn} />
-                {button}
+                {/* {button} */}
+                {isLoggedIn 
+                    ? <LogoutButton onClick={this.handleLogoutClick} />
+                    : <LoginButton onClick={this.handleLoginClick} />
+                }
+                <p>The user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in.</p>
             </div>
         )
     }

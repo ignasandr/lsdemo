@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Wrapper } from '../components/Wrapper';
 import Lasers from './Lasers';
 import Toggle from './Toggle';
+import { Toggle2 } from './Toggle2'
 
 type MyState = { isToggleOn: boolean };
 
@@ -23,10 +24,11 @@ class Bcentral extends Component<{}, MyState> {
         return (
             <div>
                <Wrapper>
-                   <Lasers isToggleOn={this.state.isToggleOn}/>
-                   <Toggle
-                        isToggleOn={this.state.isToggleOn} 
-                        toggleUpdate={this.setToggle}/>
+                    <Lasers isToggleOn={this.state.isToggleOn}/>
+                    <Toggle
+                            isToggleOn={this.state.isToggleOn} 
+                            toggleUpdate={this.setToggle}/>
+                    <Toggle2 ClickHandler={this.setToggle}/>
                </Wrapper>
             </div>
         )

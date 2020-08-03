@@ -1,16 +1,12 @@
-import React, { MouseEvent } from 'react';
+import React from 'react';
 
 type LoginProps = {
-    Click: Function;
-}
-
-function AlertOnClick(event: MouseEvent) {
-   alert("yo yo yo");
+    onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export function LoginButton(props: LoginProps) {
     return (
-        <button onClick={props.Click}>
+        <button onClick={props.onClick}>
             Login
         </button>
     );
@@ -18,7 +14,7 @@ export function LoginButton(props: LoginProps) {
 
 export function LogoutButton(props: LoginProps) {
     return (
-        <button onClick={AlertOnClick}>
+        <button onClick={props.onClick}>
             Logout
         </button>
     );
