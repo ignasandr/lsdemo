@@ -14,6 +14,8 @@ import Login from './step/Login';
 import Mailbox from './step/Mailbox';
 import NumberList from './step/NumberList';
 import Blog from './step/Blog';
+import NameForm from './step/NameForm';
+import FlavorForm from './step/FlavorForm';
 
 const posts = [
   {id: 1, title: 'Hello World', content: 'Welcome to the jungle'},
@@ -38,8 +40,10 @@ return (
       </Wrapper>
       <Wrapper>
         <Blog posts={posts}/>
+        <FlavorForm />
         <Tick />
-        <NumberList numbers={[1, 2, 3]}/>
+        <NameForm />
+        <NumberList numbers={[1, 2, 3, 4, 5, 6, 7, 8, 9, 0]}/>
       </Wrapper>
       <Bcentral />
       <Wrapper>
