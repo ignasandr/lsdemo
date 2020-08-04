@@ -48,3 +48,11 @@
 .FancyBorder-green {
     border-color: green;
 }
+
+.SplitPane-left {
+    float: left;
+}
+
+.SplitPane-right {
+    float: right;
+}

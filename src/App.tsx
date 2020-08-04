@@ -16,6 +16,7 @@ import NumberList from './step/NumberList';
 import Blog from './step/Blog';
 import NameForm from './step/NameForm';
 import FlavorForm from './step/FlavorForm';
+import SignUpDialog from './step/Dialog';
 
 const posts = [
   {id: 1, title: 'Hello World', content: 'Welcome to the jungle'},
@@ -49,6 +50,7 @@ return (
       <Wrapper>
         <Calculator />
       </Wrapper>
+      <SignUpDialog />
     </div>
   );
 }

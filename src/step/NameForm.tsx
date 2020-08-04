@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import SplitPane from './SplitPane';
+import NumberList from './NumberList';
 
 type NameFormState = {
     value: string;
@@ -24,13 +26,16 @@ class NameForm extends Component<{}, NameFormState> {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                    Text:
-                    <textarea value={this.state.value} onChange={this.handleChange} />
-                </label>
-                <input type="submit" value="Submit" />
-            </form>
+            <div>
+                <form onSubmit={this.handleSubmit}>
+                    <label>
+                        Text:
+                        <textarea value={this.state.value} onChange={this.handleChange} />
+                    </label>
+                    <input type="submit" value="Submit" />
+                </form>
+                <SplitPane left={<NumberList numbers={[1,2,3]} />} right={<NumberList numbers={[6, 5, 4, 3, 2, 1]} />} />
+            </div>
         );
     }
 }
