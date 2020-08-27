@@ -17,7 +17,7 @@ function WarningBanner(props: WarningProp) {
 export const Counter:FunctionComponent<{ initial?: number }> = ({ initial = 0 }) => {
     const [clicks, setClicks] = useState(initial);
 
-    const [name, setName] = useState('Buba');
+    const [name, setName] = useState('fren');
     useEffect(() => {
         document.title = `Hello ${name}`;
     }, [name]);

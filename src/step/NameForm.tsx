@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SplitPane from './SplitPane';
 import NumberList from './NumberList';
+import Counter2 from './Counter2';
 
 type NameFormState = {
     value: string;
@@ -35,6 +36,7 @@ class NameForm extends Component<{}, NameFormState> {
                     <input type="submit" value="Submit" />
                 </form>
                 <SplitPane left={<NumberList numbers={[1,2,3]} />} right={<NumberList numbers={[6, 5, 4, 3, 2, 1]} />} />
+                <Counter2 />
             </div>
         );
     }
